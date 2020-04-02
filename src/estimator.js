@@ -1,6 +1,6 @@
-import data from './data.js'
+//import data from './data.js'
 
-const covid19ImpactEstimator = (data) =>{
+const covid19ImpactEstimator = (data) => {
     let reportedCases;
     reportedCases = reportedCases || 0;
     const currentlyInfected = reportedCases * 10;
@@ -10,7 +10,7 @@ const covid19ImpactEstimator = (data) =>{
     return {
         impact:{
             currentlyInfected:currentlyInfected,
-            
+
         },
         severeImpact:{
 

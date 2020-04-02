@@ -1,4 +1,4 @@
-const data = {  
+const data = {
     region: {
                 name: "Africa",
                 avgAge: 19.7,       
