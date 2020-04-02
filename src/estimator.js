@@ -1,23 +1,23 @@
 //import data from './data.js'
 
 const covid19ImpactEstimator = (data) => {
-    let reportedCases;
+    let reportedCases = 10;
     reportedCases = reportedCases || 0;
-    const currentlyInfected = reportedCases * 10;
-
-    console.log(reportedCases);
-
-    return {
+   
+    let output = {
+        data:{data},
         impact:{
-            currentlyInfected:currentlyInfected,
+            currentlyInfected: reportedCases * 10,
+            infectionsByRequestedTime = currentlyInfected
 
         },
         severeImpact:{
-
+            currentlyInfected: reportedCases * 50,
         }
     };
+    console.log(output.impact.currentlyInfected);
 };
-covid19ImpactEstimator(data);
-//console.log(data);
+covid19ImpactEstimator();
+
 
 export default covid19ImpactEstimator;
