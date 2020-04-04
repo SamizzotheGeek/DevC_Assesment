@@ -1,5 +1,5 @@
 const covid19ImpactEstimator = (data) => {
-  const reportedCases = { data: reportedCases };
+  const reportedCases = { data };
   let { timeToElapse } = { data: timeToElapse };
   const periodType = { data: periodType };
   const avgDailyIncomeInUSD = { data: region.avgDailyIncomeInUSD };
