@@ -105,3 +105,4 @@ dist
 
 # trial js
 ./src/trial.js
+.src/data.js
