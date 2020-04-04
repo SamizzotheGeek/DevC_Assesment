@@ -18,7 +18,7 @@ const covid19ImpactEstimator = (data) => {
       break;
     case periodType === 'months':
       timeToElapse *= 30;
-      factor = parseFloat(2 ** Math.floor((timeToElapse) / 3));
+      factor = 2 ** Math.floor((timeToElapse) / 3);
       break;
     default:
       timeToElapse = 0;
@@ -29,9 +29,9 @@ const covid19ImpactEstimator = (data) => {
     data: { data },
     impact: {
       currentlyInfected: reportedCases * 10,
-      get infectionsByRequestedTime() { return (this.currentlyInfected * factor); },
+      get infectionsByRequestedTime() { return parseFloat(this.currentlyInfected * factor); },
       get severeCasesByRequestedTime() {
-        return Math.floor(this.infectionsByRequestedTime * 0.15);
+        return parseFloat(Math.floor(this.infectionsByRequestedTime * 0.15));
       },
       get hospitalBedsByRequestedTime() {
         return Math.floor((totalHospitalBeds * 0.35))
