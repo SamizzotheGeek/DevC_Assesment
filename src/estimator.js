@@ -32,7 +32,7 @@ const covid19ImpactEstimator = (data) => {
       currentlyInfected: reportedCases * 10,
       infectionsByRequestedTime: this.currentlyInfected * factor,
       severeCasesByRequestedTime: Math.floor(this.infectionsByRequestedTime * 0.15),
-      hospitalBedsByRequestedTime: Math.floor((this.totalHospitalBeds * 0.35))
+      hospitalBedsByRequestedTime: Math.floor((totalHospitalBeds * 0.35))
       - this.severeCasesByRequesedtTime,
       casesForICUByRequestedTime: Math.floor(0.05 * this.infectionsByRequestedTime),
       casesForVentilatorsByRequestedTime: Math.floor(0.02 * this.infectionsByRequestedTime),
@@ -44,7 +44,7 @@ const covid19ImpactEstimator = (data) => {
       currentlyInfected: reportedCases * 50,
       infectionsByRequestedTime: this.currentlyInfected * factor,
       severeCasesByRequestedTime: Math.floor(this.infectionsByRequestedTime * 0.15),
-      hospitalBedsByRequestedTime: Math.floor((this.totalHospitalBeds * 0.35))
+      hospitalBedsByRequestedTime: Math.floor((totalHospitalBeds * 0.35))
       - this.severeCasesByRequesedtTime,
       casesForICUByRequestedTime: Math.floor(0.05 * this.infectionsByRequestedTime),
       casesForVentilatorsByRequestedTime: Math.floor(0.02 * this.infectionsByRequestedTime),
