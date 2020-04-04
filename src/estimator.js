@@ -39,12 +39,17 @@ const covid19ImpactEstimator = (data) => {
             hospitalBedsByRequestedTime : Math.floor((totalHospitalBeds * 0.35)) - severeCasesByRequesedtTime,
             casesForICUByRequestedTime : Math.floor(0.05 * infectionsByRequestedTime),
             casesForVentilatorsByRequestedTime : Math.floor(0.02 * infectionsByRequestedTime),
-            dollarsInFlight : infectionsByRequestedTime * avgDailyIncomeInUSD * avgDailyIncomePopulation * timeToElapse;
+            dollarsInFlight : infectionsByRequestedTime * avgDailyIncomeInUSD * avgDailyIncomePopulation * timeToElapse,
 
         },
         severeImpact:{
             currentlyInfected: reportedCases * 50,
-            infectionsByRequestedTime: reportedCases * 50 * (2**(timeToElapse/3)),
+            infectionsByRequestedTime: currentlyInfected * factor,
+            severeCasesByRequestedTime : Math.floor(infectionsByRequestedTime * 0.15),
+            hospitalBedsByRequestedTime : Math.floor((totalHospitalBeds * 0.35)) - severeCasesByRequesedtTime,
+            casesForICUByRequestedTime : Math.floor(0.05 * infectionsByRequestedTime),
+            casesForVentilatorsByRequestedTime : Math.floor(0.02 * infectionsByRequestedTime),
+            dollarsInFlight : infectionsByRequestedTime * avgDailyIncomeInUSD * avgDailyIncomePopulation * timeToElapse,
         }
     };
    
