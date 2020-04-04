@@ -1,13 +1,13 @@
-//import data from './data.js'
+// import data from './data.js'
 
 const covid19ImpactEstimator = (data) => {
-    let reportedCases = data.reportedCases;
-    let timeToElapse = data.timeToElapse;
-    let periodType = data.periodType;
-    let avgDailyIncomeInUSD = data.region.avgDailyIncomeInUSD;
-    let avgDailyIncomePopulation = data.reportedCases.avgDailyIncomePopulation;
-    let population = data.population;
-    let totalHospitalBeds = data.totalHospitalBeds;
+  const reportedCases = data.reportedCases;
+  let timeToElapse = data.timeToElapse;
+  let periodType = data.periodType;
+  let avgDailyIncomeInUSD = data.region.avgDailyIncomeInUSD;
+  let avgDailyIncomePopulation = data.reportedCases.avgDailyIncomePopulation;
+  let population = data.population;
+  let totalHospitalBeds = data.totalHospitalBeds;
 
     //increment factor
     switch(timeToElapse){
