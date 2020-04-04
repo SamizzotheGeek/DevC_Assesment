@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const covid19ImpactEstimator = (data) => {
   const reportedCases = { data };
   let { timeToElapse } = { data: timeToElapse };
