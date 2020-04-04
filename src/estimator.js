@@ -1,15 +1,14 @@
 /* eslint-disable linebreak-style */
 const covid19ImpactEstimator = (data) => {
-  const { reportedCases } = { data };
+  const { reportedCases } = { data } || 0;
   let { timeToElapse } = { data };
   const periodType = { data };
   const avgDailyIncomeInUSD = { data };
   const avgDailyIncomePopulation = { data };
   const totalHospitalBeds = { data };
   let factor;
-
   // increment factor
-  switch (factor) {
+  switch (timeToElapse) {
     case periodType === 'days':
       factor = 2 ** Math.floor((timeToElapse) / 3);
       break;
