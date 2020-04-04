@@ -30,25 +30,45 @@ const covid19ImpactEstimator = (data) => {
     impact: {
       currentlyInfected: reportedCases * 10,
       get infectionsByRequestedTime() { return this.currentlyInfected * factor; },
-      severeCasesByRequestedTime: Math.floor(this.infectionsByRequestedTime * 0.15),
-      hospitalBedsByRequestedTime: Math.floor((totalHospitalBeds * 0.35))
-      - this.severeCasesByRequesedtTime,
-      casesForICUByRequestedTime: Math.floor(0.05 * this.infectionsByRequestedTime),
-      casesForVentilatorsByRequestedTime: Math.floor(0.02 * this.infectionsByRequestedTime),
-      dollarsInFlight: this.infectionsByRequestedTime * avgDailyIncomeInUSD
-      * avgDailyIncomePopulation * timeToElapse
+      get severeCasesByRequestedTime() {
+        return Math.floor(this.infectionsByRequestedTime * 0.15);
+      },
+      get hospitalBedsByRequestedTime() {
+        return Math.floor((totalHospitalBeds * 0.35))
+      - this.severeCasesByRequesedtTime;
+      },
+      get casesForICUByRequestedTime() {
+        return Math.floor(0.05 * this.infectionsByRequestedTime);
+      },
+      get casesForVentilatorsByRequestedTime() {
+        return Math.floor(0.02 * this.infectionsByRequestedTime);
+      },
+      get dollarsInFlight() {
+        return this.infectionsByRequestedTime * avgDailyIncomeInUSD
+      * avgDailyIncomePopulation * timeToElapse;
+      }
 
     },
     severeImpact: {
       currentlyInfected: reportedCases * 50,
-      infectionsByRequestedTime: this.currentlyInfected * factor,
-      severeCasesByRequestedTime: Math.floor(this.infectionsByRequestedTime * 0.15),
-      hospitalBedsByRequestedTime: Math.floor((totalHospitalBeds * 0.35))
-      - this.severeCasesByRequesedtTime,
-      casesForICUByRequestedTime: Math.floor(0.05 * this.infectionsByRequestedTime),
-      casesForVentilatorsByRequestedTime: Math.floor(0.02 * this.infectionsByRequestedTime),
-      dollarsInFlight: this.infectionsByRequestedTime * avgDailyIncomeInUSD
-      * avgDailyIncomePopulation * timeToElapse
+      get infectionsByRequestedTime() { return this.currentlyInfected * factor; },
+      get severeCasesByRequestedTime() {
+        return Math.floor(this.infectionsByRequestedTime * 0.15);
+      },
+      get hospitalBedsByRequestedTime() {
+        return Math.floor((totalHospitalBeds * 0.35))
+      - this.severeCasesByRequesedtTime;
+      },
+      get casesForICUByRequestedTime() {
+        return Math.floor(0.05 * this.infectionsByRequestedTime);
+      },
+      get casesForVentilatorsByRequestedTime() {
+        return Math.floor(0.02 * this.infectionsByRequestedTime);
+      },
+      get dollarsInFlight() {
+        return this.infectionsByRequestedTime * avgDailyIncomeInUSD
+      * avgDailyIncomePopulation * timeToElapse;
+      }
     }
   };
 };
