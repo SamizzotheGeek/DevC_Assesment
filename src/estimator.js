@@ -29,7 +29,7 @@ const covid19ImpactEstimator = (data) => {
     data: { data },
     impact: {
       currentlyInfected: reportedCases * 10,
-      infectionsByRequestedTime: this.currentlyInfected * factor,
+      get infectionsByRequestedTime() { return this.currentlyInfected * factor; },
       severeCasesByRequestedTime: Math.floor(this.infectionsByRequestedTime * 0.15),
       hospitalBedsByRequestedTime: Math.floor((totalHospitalBeds * 0.35))
       - this.severeCasesByRequesedtTime,
